@@ -1,0 +1,6 @@
+.tox
+venv35
+.idea
+*.egg-info
+build
+__pycache__
