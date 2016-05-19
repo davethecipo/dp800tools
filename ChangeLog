@@ -1,5 +1,12 @@
 CHANGES
 =======
 
+* Basic functionality for ROF files. Rounding errors still present
+* use pytest for testing
+* rof test files with pictures
+* setup, requirements and information files
+* documentation skeleton
+* pycharm script: activate venv on startup
+* Simple gitignore
 * PDF description of binary file format
 * Initial commit
