@@ -1,6 +1,12 @@
 CHANGES
 =======
 
+* fix error in setup.cfg
+* altro
+* prova
+* +
+* Add travis config file
+* Channel values are within acceptable error
 * Basic functionality for ROF files. Rounding errors still present
 * use pytest for testing
 * rof test files with pictures

@@ -1,6 +1,8 @@
 .tox
-venv35
+venv*
 .idea
 *.egg-info
 build
 __pycache__
+*.pyc
+.cache

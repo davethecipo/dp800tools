@@ -1,0 +1,18 @@
+language: python
+sudo: true
+addons:
+  apt:
+    sources:
+      - deadsnakes
+    packages:
+      - python3.5
+env:
+  matrix:
+    - TOXENV=py27
+    - TOXENV=py34
+    - TOXENV=py35
+    - TOXENV=pep8
+install:
+  - pip install tox
+script:
+  - tox

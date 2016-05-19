@@ -27,8 +27,7 @@ def convert_rof(file_content):
     return time, ch1, ch2, ch3
 
 
-def to_csv_format(time, *channels, separator=",", header=True,
-                  units_second_row=False):
+def to_csv_format(time, *channels, **kwargs):
     '''Return a string corresponding to the csv format.
 
     Args:
@@ -38,6 +37,7 @@ def to_csv_format(time, *channels, separator=",", header=True,
          a dict with two lists, one for voltage in Volts and one for current
           in Amperes, i.e {'v': [1, 2, 3], 'i': [2, 4, 6]}.
            The order in which channels are passed is conserved in the output
+        TODO spiegare kwargs
         separator (str): the separator between values
         header(bool): if False, only numbers are written, i.e the header is
          skipped.
@@ -62,8 +62,14 @@ def to_csv_format(time, *channels, separator=",", header=True,
         Write units on the second row
         >>> result = to_csv_format(time, channel1, units_second_row=True)
     '''
+    # the following three lines are needed for backward compatibility with
+    # python 2.7, see http://goo.gl/pnUyyt
+    separator = kwargs.pop('separator', ',')
+    header = kwargs.pop('header', True)
+    units_second_row = kwargs.pop('units_second_row', False)
     return False
 
 
-def to_hdf5_format(time, *channels, units_metadata=False):
+def to_hdf5_format(time, *channels, **kwargs):
+    units_metadata = kwargs.pop('units_metadata', False)
     return False

@@ -1,5 +1,4 @@
 import os
-import pytest
 from dp800tools.rof import convert_rof
 from dp800tools.common import every_interval
 

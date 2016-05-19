@@ -1,3 +1,6 @@
+import struct
+
+
 def create_channels():
     ch1 = {'v': [], 'i': []}
     ch2 = {'v': [], 'i': []}
@@ -14,8 +17,8 @@ def every_interval(stream, size, offset, n):
 
 def convert_current_or_voltage(four_bytes):
     '''Returns time in seconds, voltage in Volts and current in Amperes.'''
-    return convert_int(four_bytes)/10000
+    return convert_int(four_bytes)/10000.0  # 10000.0 for python 2 division
 
 
 def convert_int(four_bytes):
-    return int.from_bytes(four_bytes, byteorder='little')
+    return struct.unpack("<i", four_bytes)[0]  # 32 bit little endian
